@@ -1,49 +1,63 @@
-<!-- public/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Message Board</title>
-  <style>
-    /* Simple styling for message items */
-    .message {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 8px 0;
-      position: relative;
-    }
-    .delete-btn {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      background: red;
-      color: white;
-      border: none;
-      padding: 4px 8px;
-      cursor: pointer;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-      margin-top: 10px;
-    }
-    .timestamp {
-      font-size: 0.85em;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <h1>Message Board</h1>
-  <form id="messageForm" enctype="multipart/form-data">
-    <input type="text" id="username" name="username" placeholder="Your name" required />
-    <input type="text" id="text" name="text" placeholder="Your message" required />
-    <input type="file" id="image" name="image" accept="image/*" />
-    <button type="submit">Send</button>
-  </form>
-  
-  <ul id="messagesList"></ul>
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
 
-  <script src="app.js"></script>
-</body>
-</html>
+  input[type="text"],
+  input[type="file"],
+  button {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #messagesList li {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    list-style-type: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .timestamp {
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 0.3rem;
+  }
+
+  .delete-btn {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+</style>
